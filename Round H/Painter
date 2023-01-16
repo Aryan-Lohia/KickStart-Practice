@@ -1,0 +1,26 @@
+colors = {
+    'r': ['r'],
+    'b': ['b'],
+    'y': ['y'],
+    'o': ['r', 'y'],
+    'p': ['r', 'b'],
+    'g': ['y', 'b'],
+    'a': ['r', 'b', 'y'],
+}
+n = int(input())
+for i in range(0, n):
+    l = int(input())
+    p = input()
+    p = p.lower()
+    minStrokeF = 0
+    for j in "rby":
+        minStrokes = 0
+        ls = -5
+        for k in range(0, l):
+            if p[k] != 'u':
+                if p[k] == j or j in colors[p[k]]:
+                    if ls != k - 1:
+                        minStrokes += 1
+                    ls = k
+        minStrokeF += minStrokes
+    print(minStrokeF)
