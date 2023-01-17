@@ -1,0 +1,23 @@
+a={
+'01':'2',
+'12':'3',
+'23':'4',
+'34':'5',
+'45':'6',
+'56':'7',
+'67':'8',
+'78':'9',
+'89':'0',
+'90':'1',
+}
+n=int(input())
+for i in range(0,n):
+    l=int(input())
+    p=input()
+    while(True):
+        k=p
+        for m in a.keys():
+            p=p.replace(m,a[m])
+        if(k==p):
+            break
+    print(f"Case #{i+1}: {p}")
